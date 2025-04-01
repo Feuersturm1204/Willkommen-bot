@@ -8,9 +8,11 @@ with open("config.json", "r") as config_file:
     BOT_TOKEN = config.get("BOT_TOKEN")
 
 intents = discord.Intents.default()
-intents.members = True  # Wichtig für Join/Leave Events
+intents.members = True
+intents.message_content = True
 
 bot = commands.Bot(command_prefix="/", intents=intents)
+
 
 # Konfigurationsoptionen
 settings = {
